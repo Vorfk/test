@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "Test_exercise"
+version = "0.1.0"
+description = ""
+authors = ["Dmitry Nikiforov <dimaniki0220@mail.ru>"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+langchain = "0.0.352"
+langchain_openai = "0.0.6"
+html2text = "*"
+tiktoken = "*"
+python-dotenv = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
