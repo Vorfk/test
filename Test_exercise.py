@@ -14,7 +14,7 @@ else:
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 OPENAI_PROXY = os.getenv('OPENAI_PROXY')
 prompt_template = "From {html} give me description of item 'Топор Optimal 800г, Matrix/21658', no more than 500 characters, output in russian"
-url_to_parse = os.getenv('URL_TO_PARSE')
+URL_TO_PARSE = os.getenv('URL_TO_PARSE')
 
 llm = OpenAI(model_name="gpt-3.5-turbo-instruct",
              openai_api_key=OPENAI_API_KEY,
@@ -22,7 +22,7 @@ llm = OpenAI(model_name="gpt-3.5-turbo-instruct",
              openai_proxy=OPENAI_PROXY)
 prompt = PromptTemplate.from_template(prompt_template)
 
-response = requests.get(url_to_parse)
+response = requests.get(URL_TO_PARSE)
 html_code = response.text
 h = html2text.HTML2Text()
 h.ignore_links = True
